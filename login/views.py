@@ -7,3 +7,6 @@ def gestor(request):
 
 def adm(request):
     return render(request, 'html/login.html' )
+
+def logge(request):
+    return render(request, 'html/inig.html')
