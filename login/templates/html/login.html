@@ -1,23 +1,28 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link rel="shortcut icon" href="login\templates\img\ipojuca icone.ico" type="image/x-icon">-->
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <title>Prefeitura</title>
 </head>
 <body>
+    <div class="diva">
     <img class="imgl" src="https://www.ipojuca.pe.gov.br/wp-content/uploads/2021/03/loader-pmi.png" alt="BRASAO de IPOJUCA" >
-    <h1 style="font-size: 15px; position: relative; top: -35px; left: 46%;">PREFEITURA DO</h1>
-    <H1>IPOJUCA</H1>
+    <h1 style="font-size: 15px; position: relative; top: -100px; left: 46%;">PREFEITURA DO</h1>
+    <H1 style="font-size: 50px; position: relative; top: -140px; left: 46%;">IPOJUCA</H1>
     <H2>SECRETARIA DE SAUDE</H2>
     <H3>SUPORTE TECNICO</H3>
+    <div class="divi">
     <label for="matricuLA">Digite sua Matricula</label><br>
-    <input type="text" id = 'matricula' placeholder="Matricula"><br>
+    <input type="text" id = 'matricula' placeholder="Matricula"><br><br><br>
     <label for="SenhA">digite sua Senha</label><br>
-    <input type="password" id = 'cpf' placeholder="Senha"><br>
+    <input type="password" id = 'cpf' placeholder="Senha"><br><br><br>
     <button>Entrar</button>
-
+    </div>
+    </div>
 </body>
 </html>

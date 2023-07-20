@@ -1,0 +1,10 @@
+h1{font-family: 'Inter'; font-size: 50px; font-style: normal; line-height: normal; font-weight: 400; color: #1ABC9C; flex-shrink: 0;}
+h2{font-family: 'Inter'; font-size: 15px; font-style: normal; color: #1D4E59; position: relative; top: -168px; left: 47%;}
+h3{font-family: 'Inter'; font-size: 12px; font-style: normal; color: #1D4E59;position: relative; top: -170px; left: 50%;}
+label{font-family: 'Inter'; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal; color:#000;}
+input{width: 523px; height: 53px; flex-shrink: 0;}
+.imgl{width: 183px; height: 217px; flex-shrink: 0; position: relative; top: 75px; left: 30%;}
+.divi{position: relative; top: -120px; left: 32%;}
+.diva{position: relative; top: -80px;}
+button{ width: 260px; height: 64px; flex-shrink: 0; background: #3E73A4; color: #fff; font-size: 15px; font-style: normal; font-family: 'Inter'; 
+position:relative; left: 10%;}
