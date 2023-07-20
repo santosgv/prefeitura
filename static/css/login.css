@@ -1,4 +1,11 @@
-h1{font-family: 'Inter'; font-size: 50px; font-style: normal; line-height: normal; font-weight: 400; color: #1ABC9C; flex-shrink: 0;}
+body, html{ 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h1{font-family: 'Inter'; font-size: 50px; font-style: normal; line-height: normal; font-weight: 400; color: #1abc9c; flex-shrink: 0;}
 h2{font-family: 'Inter'; font-size: 15px; font-style: normal; color: #1D4E59; position: relative; top: -168px; left: 47%;}
 h3{font-family: 'Inter'; font-size: 12px; font-style: normal; color: #1D4E59;position: relative; top: -170px; left: 49.5%;}
 label{font-family: 'Inter'; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal; color:#000; font-weight: bold; }
@@ -8,3 +15,6 @@ input{width: 410px; height: 35px; flex-shrink: 0;}
 .diva{position: relative; top: -80px;}
 button{ width: 180px; height: 39px; flex-shrink: 0; background: #3E73A4; color: #fff; font-size: 15px; font-style: normal; font-family: 'Inter'; 
 position:relative; left: 9%;}
+
+.divesque{background-color: #1abc9c; position: absolute; height: 100%; width: 100%; top: 0vh; right: 70%;}
+.divdire{background-color: #1abc9c; position: absolute; height: 100%; width: 36%; top: 0vh; right: 0%;}
