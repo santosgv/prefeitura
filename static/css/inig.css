@@ -3,6 +3,7 @@ body, html{
     padding: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 
@@ -14,9 +15,14 @@ body, html{
 
 .imglog{width: 120px; height: 123px; flex-shrink: 0; position: relative; top: 0vh; right: -4vh;}
 
+.imgcha{width: 53px; height: 53px; flex-shrink: 0; position: relative; top: 2%; right: -19vh;}
+
+.botach{background: #076B0B; color: #fff; width: 90px; height: 30px;
+position: relative; top: 3%;}
+
 table, td, th {
     border: 1px solid;
   }
   
-table{width: 100%;
-    border-collapse: collapse;}
+table{width: 50%;
+    border-collapse: collapse;position: relative; top: 10%; right: -46vh;}
