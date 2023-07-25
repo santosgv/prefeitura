@@ -1,16 +1,13 @@
 from django.shortcuts import render
-from .models import Usuario
 from django.shortcuts import redirect
 from django.http import HttpResponse
+from .models import Usuario
 
 
+def adm(request):
+    return render(request, 'html/adm_login.html' )
 
-def gestor(request):
-    status = request.GET.get('status')
-    return render(request, 'html/login.html', {'status': status})
-
-
-def valida(request):
+def val(request):
     matricula = request.POST.get('Matricula')
     senha = request.POST.get('Senha')
     
@@ -18,10 +15,8 @@ def valida(request):
     usuario = Usuario.objects.filter(matricula = matricula).filter(senha = senha)
 
     if len(usuario) == 0:
-        return redirect('/login/gestor/?status=1')
+        return redirect('/logadm/adm/?status=1')
     
     elif len(usuario) > 0:
         request.session['usuario'] = usuario[0].id
         return redirect('/chamado/home')
-
-    

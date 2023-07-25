@@ -14,8 +14,10 @@ input{width: 410px; height: 35px; flex-shrink: 0;}
 .imgl{width: 183px; height: 217px; flex-shrink: 0; position: relative; top: 75px; left: 30%;}
 .divi{position: relative; top: -120px; left: 32%;}
 .diva{position: relative; top: -70px;}
-button{ width: 180px; height: 39px; flex-shrink: 0; background: #3E73A4; color: #fff; font-size: 15px; font-style: normal; font-family: 'Inter'; 
+.buta{ width: 180px; height: 39px; flex-shrink: 0; background: #3E73A4; color: #fff; font-size: 15px; font-style: normal; font-family: 'Inter'; 
 position:relative; left: 9%;}
 
 .divesque{background-color: #1abc9c; position: absolute; height: 100%; width: 100%; top: 0vh; right: 70%;}
 .divdire{background-color: #1abc9c; position: absolute; height: 100%; width: 34%; top: 0vh; right: 0%;}
+
+
