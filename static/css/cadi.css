@@ -7,10 +7,13 @@ body, html{
 }
 
 
-.divim{ background: #1abc9c; width: 100%; height: 18vh; flex-shrink: 0;}
+.divesq{ background: #0fe7ca; position: absolute; height: 100%; width: 100%; top: 0vh; right: 80%;}
 
-.imgale{width: 30px; height: 26px; flex-shrink: 0; position: relative; top: -4vh; right: -150vh;}
+.divdir{background: #0fe7ca; position: absolute; height: 100%; width: 34%; top: 0vh; right: -10vmax;}
 
-.imguser{width: 48px; height: 58px; flex-shrink: 0; position: relative; top: -2vh; right: -155vh;}
 
-.imglog{width: 120px; height: 123px; flex-shrink: 0; position: relative; top: 0vh; right: -4vh;}
+
+
+.tipo{position: absolute; width: 22vh;; top: 20vh; right: 60vh;}
+.local{position: absolute; width: 25vh; top: 20vh; right: 120vh;}
+.dema{position: absolute;  top: 45vh; right: 68vh;}
