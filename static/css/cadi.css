@@ -14,3 +14,8 @@ body, html{
 .imguser{width: 48px; height: 58px; flex-shrink: 0; position: relative; top: -2vh; right: -155vh;}
 
 .imglog{width: 120px; height: 123px; flex-shrink: 0; position: relative; top: 0vh; right: -4vh;}
+
+
+.body-form{
+    padding: 20px;
+}
