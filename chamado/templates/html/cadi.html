@@ -16,8 +16,8 @@
         </div>
 
         <form action="{% url 'form' %}" method="post">{% csrf_token %}
-            <label for="tipo">Tipo:</label><br>
-            <select name="TIPO" id="type">
+            <label class="ti" for="tipo">Tipo:</label><br>
+            <select class="tip" name="TIPO" id="type">
                 <option value="-">--</option>
                 <option value="inter">Internet</option>
                 <option value="manu">Manutenção</option>
@@ -25,14 +25,17 @@
                 <option value="out">Outros</option>
                 
             </select>
+            <label class="loc" for="loc">Localização:</label><br>
+            <input  class="lo" type="text" name="loca" id="lo"><br>
+            <label class="de" for="de">Demanda:</label><br>
+            <textarea class="dem" name="de" id="dem" cols="40" rows="10"></textarea><br>
+
+
         <input type="submit" value="go">
 
-        {% messages %}
-                            <br>
-                                <div class="alert {{message.tags}}">
-                                    {{message}}
-                                </div>
-                   
+        {% for message in messages %}
+             {{ message }}
+        {% endfor %}  
  
 
 

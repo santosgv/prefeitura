@@ -14,13 +14,13 @@ def cadi(request):
 def valif(request):
     if request.method == 'POST':
         tipo= request.POST.get('TIPO')
-        valor = 0
+
 
 
         if tipo == 'out':
-             messages.add_message(request, constants.ERROR, "não é da nossa competencia cidadão")
-             valor = valor + 1
-             return render(request, 'html/cadi.html')
-        elif valor == 2:
-            return HttpResponse('cadastrado com sucesso')
+             messages.error(request, 'Houve um erro')
+
+             return render(request, 'html/cadi.html', {'messages': messages})
+
+        
     return render(request, 'html/cadi.html')

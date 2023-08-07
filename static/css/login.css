@@ -12,7 +12,7 @@ h3{font-family: 'Inter'; font-size: 12px; font-style: normal; color: #1D4E59;pos
 label{font-family: 'Inter'; font-size: 12px; font-style: normal; font-weight: 400; line-height: normal; color:#000; font-weight: bold; }
 input{width: 410px; height: 35px; flex-shrink: 0;}
 .imgl{width: 183px; height: 217px; flex-shrink: 0; position: relative; top: 75px; left: 30%;}
-.divi{position: relative; top: -120px; left: 32%;}
+.divi{position: relative; top: -120px; left: 32vmax;}
 .diva{position: relative; top: -70px;}
 .buta{ width: 180px; height: 39px; flex-shrink: 0; background: #3E73A4; color: #fff; font-size: 15px; font-style: normal; font-family: 'Inter'; 
 position:relative; left: 9%;}
