@@ -15,6 +15,19 @@
         <img class="imguser" src="https://img.icons8.com/?size=512&id=98957&format=png" alt="conta">
         </div>
 
+
+        <table class="cor">
+            <tr>
+                <label style="font-style: oblique; font-weight: bold;" for="ge">Gestor:</label>
+                <th >Nome do corno</th>
+            </tr>
+        </table>
+        <table class="uni">
+            <tr>
+                <label style="font-style: oblique; font-weight: bold; " for="un">Unidade:</label>
+                <th>nome da unidade</th>
+            </tr>
+        </table>
         <form action="{% url 'form' %}" method="post">{% csrf_token %}
             <label class="ti" for="tipo">Tipo:</label><br>
             <select class="tip" name="TIPO" id="type">
@@ -24,25 +37,14 @@
                 <option value="soli">Solicitação</option>
                 <option value="out">Outros</option>
                 
-            </select>
+            </select><br>
             <label class="loc" for="loc">Local Problema:</label><br>
             <input  class="lo" type="text" name="loca" id="lo"><br>
             <label class="de" for="de">Demanda:</label><br>
             <textarea class="dem" name="de" id="dem" cols="40" rows="10"></textarea><br>
-            <table class="cor">
-                <tr>
-                    <label style="font-style: oblique; font-weight: bold; position: relative; top: -24vh; right: -23vh;" for="ge">Gestor:</label>
-                    <th >Nome do corno</th>
-                </tr>
-            </table>
-            <table class="uni">
-                <tr>
-                    <label style="font-style: oblique; font-weight: bold; position: relative; top: -28vh; right: -175vh;" for="un">Unidade:</label>
-                    <td>nome da unidade</td>
-                </tr>
-            </table>
+            
 
-        <input type="submit" value="go">
+        <input style="background: rgb(5, 255, 88); color: #fff; width: 60px; height: 30px;" type="submit" value="Enviar">
 
         {% for message in messages %}
              {{ message }}

@@ -26,11 +26,11 @@ tr:nth-child(even){background: #f2f2f2;}
 tr:hover {background-color: #ddd;} 
 
 
-.ti{position: relative;  top: 15vh;  right: -57vh;}
-.tip{position: relative; top: 15vh; right: -57vh; height: 4vh;}
-.loc{position: relative; top: 13vh; right: -115vh; }
-.lo{position: relative; top: 13vh; right: -130vh; height: 3vh; }
-.de{position: relative; top: 25vh; right: -70vh; }
-.dem{position: relative; top: 25vh; right: -70vh;}
-.cor{border: 1px solid; width: 19vh;  position: relative; text-align: left; top: -24vh; right: -23vh;}
-.uni{border: 1px solid; text-align: left; position: relative; text-align: left; top: -28vh; right: -175vh; }
+.ti{position: relative;  }
+.tip{position: relative;  height: 4vh;}
+.loc{position: relative;  }
+.lo{position: relative;  height: 3vh; }
+.de{position: relative; }
+.dem{position: relative;}
+.cor{border: 1px solid; width: 19vh;   text-align: left; }
+.uni{border: 1px solid; text-align: left;  text-align: left; }

@@ -4,7 +4,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="{% static 'img/ipojuca icone.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <title>Prefeitura</title>
@@ -14,6 +14,7 @@
         
 
     {% endif %}
+    
     <div class="divesque"></div>
     <div class="divdire" ></div>
     <div class="diva">
@@ -25,12 +26,13 @@
     <div class="divi">
         <form action="{% url 'valida'%}" method="post">{% csrf_token %}
     <label for="matricuLA">Digite sua Matrícula:</label><br>
-    <input name="Matricula" type="text" id = 'matricula' placeholder="Matrícula"><br><br><br>
+    <input style="width: 22vh;" name="Matricula" type="text" id = 'matricula' placeholder="Matrícula"><br><br><br>
     <label for="SenhA">Digite sua Senha:</label><br>
-    <input name="Senha" type="password" id = 'cpf' placeholder="Senha"><br><br><br>
+    <input style="width: 22vh;" name="Senha" type="password" id = 'cpf' placeholder="Senha"><br><br><br>
     <input class="buta" type="submit" value="Entrar">
         </form>
     </div>
     </div>
+
 </body>
 </html>
