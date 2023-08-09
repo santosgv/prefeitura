@@ -15,7 +15,7 @@
         <img class="imguser" src="https://img.icons8.com/?size=512&id=98957&format=png" alt="conta">
         </div>
 
-
+   <div class="espa">
         <table class="cor">
             <tr>
                 <label style="font-style: oblique; font-weight: bold;" for="ge">Gestor:</label>
@@ -32,9 +32,9 @@
             <label class="ti" for="tipo">Tipo:</label><br>
             <select class="tip" name="TIPO" id="type">
                 <option value="-">--</option>
-                <option value="inter">Internet</option>
-                <option value="manu">Manutenção</option>
-                <option value="soli">Solicitação</option>
+                <option value="Internet">Internet</option>
+                <option value="Manutenção">Manutenção</option>
+                <option value="Solicitação">Solicitação</option>
                 <option value="out">Outros</option>
                 
             </select><br>
@@ -45,7 +45,7 @@
             
 
         <input style="background: rgb(5, 255, 88); color: #fff; width: 60px; height: 30px;" type="submit" value="Enviar">
-
+    </div>
         {% for message in messages %}
              {{ message }}
         {% endfor %}  
