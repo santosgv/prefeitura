@@ -14,7 +14,16 @@ def logge(request):
         return redirect('/login/gestor')
 
 def cadi(request):
-    return render(request, 'html/cadi.html')
+
+    if request.session.get('usuario'):
+        usuario = Usuario.objects.get(id = request.session['usuario'])
+        
+
+
+        return render(request, 'html/cadi.html', {'usuario':usuario})
+    else:
+        return redirect('/login/gestor')
+
 
 
 def valif(request):
@@ -26,13 +35,9 @@ def valif(request):
 
         chamado = Chamado( tipo = tipo, localpro = local, demanda = demanda, usuario = usuario)
         chamado.save()
-        return HttpResponse(f"{tipo} {local} {demanda}")
+        return render(request, 'html/inig.html')
 
 
-        if tipo == 'out':
-             messages.error(request, 'Houve um erro')
-
-             return render(request, 'html/cadi.html', {'messages': messages})
 
         
     return render(request, 'html/cadi.html')

@@ -17,15 +17,16 @@
 
    <div class="espa">
         <table class="cor">
+
             <tr>
                 <label style="font-style: oblique; font-weight: bold;" for="ge">Gestor:</label>
-                <th >Nome do corno</th>
+                <th >{{usuario.nome}}</th>
             </tr>
         </table>
-        <table class="uni">
+        <table class="uni">  
             <tr>
                 <label style="font-style: oblique; font-weight: bold; " for="un">Unidade:</label>
-                <th>nome da unidade</th>
+                <th>{{usuario.local}}</th>
             </tr>
         </table>
         <form action="{% url 'form' %}" method="post">{% csrf_token %}
