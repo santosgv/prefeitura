@@ -19,10 +19,10 @@ def cadi(request):
 
 def valif(request):
     if request.method == 'POST':
-
         tipo= request.POST.get('TIPO')
         local= request.POST.get('loca')
         demanda = request.POST.get('de')
+        usuario = Usuario.objects.get(id = request.session['usuario'])
 
         chamado = Chamado( tipo = tipo, localpro = local, demanda = demanda, usuario = usuario)
         chamado.save()
