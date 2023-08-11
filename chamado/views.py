@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.contrib.messages import constants
 from login.models import Usuario
+from logadm.models import Usuarioa
 from .models import Chamado
 
 
@@ -41,3 +42,12 @@ def valif(request):
 
         
     return render(request, 'html/cadi.html')
+
+def adm(request):
+    if request.session.get('usuario'):
+        
+        usuario = Usuarioa.objects.get(id = request.session['usuario'])
+        
+        return render(request, 'html/hoadm.html')
+    else:
+        return redirect('/logadm/adm')

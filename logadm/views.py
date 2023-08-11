@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import HttpResponse
-from .models import Usuario
+from .models import Usuarioa
 
 
 def adm(request):
@@ -12,11 +12,11 @@ def val(request):
     senha = request.POST.get('Senha')
     
 
-    usuario = Usuario.objects.filter(matricula = matricula).filter(senha = senha)
+    usuario = Usuarioa.objects.filter(matricula = matricula).filter(senha = senha)
 
     if len(usuario) == 0:
         return redirect('/logadm/adm/?status=1')
     
     elif len(usuario) > 0:
         request.session['usuario'] = usuario[0].id
-        return redirect('/chamado/home')
+        return redirect('/chamado/adm')
