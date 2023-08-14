@@ -9,8 +9,10 @@ from .models import Chamado
 
 def logge(request):
     if request.session.get('usuario'):
-        usuario = Usuario.objects.get(id = request.session['usuario']).nome
-        return render(request, 'html/inig.html')
+        usuario = Usuario.objects.get(id = request.session['usuario'])
+        chamados = Chamado.objects.filter(usuario=usuario)
+        
+        return render(request, 'html/inig.html', {'chamados':chamados, 'usuario':usuario})
     else:
         return redirect('/login/gestor')
 
@@ -36,7 +38,7 @@ def valif(request):
 
         chamado = Chamado( tipo = tipo, localpro = local, demanda = demanda, usuario = usuario)
         chamado.save()
-        return render(request, 'html/inig.html')
+        return redirect('/chamado/home/')
 
 
 

@@ -13,6 +13,7 @@
     <img class="imglog" src="https://www.ipojuca.pe.gov.br/wp-content/uploads/2021/03/loader-pmi.png" alt="logo ipojuca">
     <img class="imgale"  src="https://img.icons8.com/?size=512&id=24552&format=png" alt="Duvidas">
     <img class="imguser" src="https://img.icons8.com/?size=512&id=98957&format=png" alt="conta">
+    <span class="name">{{ usuario.nome }}</span>
     </div>
     <img class="imgpc" src="{% static 'img/pc.gif' %}" alt="https://icons8.com.br/icons/set/pc">
     <img class="imgchave"  src="{% static 'img/inclesa.gif' %}" alt="https://icons8.com.br/icons/set/chave-inglesa">
@@ -26,26 +27,18 @@
           <th style="width: 15%;"> <span>Código</span></th>
           <th style="width: 30%;"><span>Assunto</span></th>
           <th style="width: 15%;"><span>Status</span></th>
-          <th><span>Atendente</span></th>
           <th><span>Realizado</span></th>
           <th><span>Finalizado</span></th>
         </tr>
-        <tr>
-          <td>895</td>
-          <td>Internet</td>
-          <td>Concluido</td>
-          <td>Anderson </td>
-          <td>24/04/2024</td>
+        {% for chamado in chamados %}
+        <tr >
+          <td >{{ chamado.id }}</td>
+          <td>{{ chamado.tipo }}</td>
+          <td>{{ chamado.status }}</td>
+          <td>{{chamado.data_cadastro|date:"d/m/Y"}}</td>
           <td>29/04/2024</td>
         </tr>
-        <tr>
-          <td>897 </td>
-          <td>Manutençãp</td>
-          <td>Pendente</td>
-          <td>--</td>
-          <td>28/01/2025</td>
-          <td>--</td>
-        </tr>
+        {% endfor %}
     </table>
 </body>
 </html>
