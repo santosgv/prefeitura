@@ -5,14 +5,17 @@ from django.contrib.messages import constants
 from login.models import Usuario
 from logadm.models import Usuarioa
 from .models import Chamado
-
+from django.core.paginator import Paginator
 
 def logge(request):
     if request.session.get('usuario'):
         usuario = Usuario.objects.get(id = request.session['usuario'])
-        chamados = Chamado.objects.filter(usuario=usuario)
+        chamados = Chamado.objects.filter(usuario=usuario) 
+        paginator = Paginator(chamados, 4)
+        page_num = request.GET.get('page')
+        page = paginator.get_page(page_num)
         
-        return render(request, 'html/inig.html', {'chamados':chamados, 'usuario':usuario})
+        return render(request, 'html/inig.html', {'page':page, 'usuario':usuario})
     else:
         return redirect('/login/gestor')
 

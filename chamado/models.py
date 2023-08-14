@@ -8,7 +8,7 @@ class Chamado(models.Model):
     demanda = models.CharField(max_length=300)
     usuario = models.ForeignKey(Usuario, on_delete=models.DO_NOTHING)
     data_cadastro = models.DateTimeField(default= datetime.today)
-    data_finalizado = models.CharField(max_length=12, default='N/A')
+    data_finalizado = models.CharField(max_length=12, default='--')
     status = models.CharField(max_length=40, default='Pendente')
     def _str_(self) -> str:
         return self.tipo

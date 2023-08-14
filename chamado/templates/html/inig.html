@@ -30,15 +30,21 @@
           <th><span>Realizado</span></th>
           <th><span>Finalizado</span></th>
         </tr>
-        {% for chamado in chamados %}
+        {% for chamado in page.object_list %}
         <tr >
           <td >{{ chamado.id }}</td>
           <td>{{ chamado.tipo }}</td>
           <td>{{ chamado.status }}</td>
           <td>{{chamado.data_cadastro|date:"d/m/Y"}}</td>
-          <td>29/04/2024</td>
+          <td>{{chamado.data_finalizado}}</td>
         </tr>
         {% endfor %}
+
+        
+
+
+
     </table>
+
 </body>
 </html>
