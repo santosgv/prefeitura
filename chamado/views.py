@@ -15,7 +15,7 @@ def logge(request):
         page_num = request.GET.get('page')
         page = paginator.get_page(page_num)
         
-        return render(request, 'html/inig.html', {'page':page, 'usuario':usuario})
+        return render(request, 'html/inig.html/', {'page':page, 'usuario':usuario})
     else:
         return redirect('/login/gestor')
 
@@ -49,10 +49,25 @@ def valif(request):
     return render(request, 'html/cadi.html')
 
 def adm(request):
+    
     if request.session.get('usuario'):
         
         usuario = Usuarioa.objects.get(id = request.session['usuario'])
+        chamados = Chamado.objects.filter(tecnico=usuario) 
+        paginator = Paginator(chamados, 4)
+        page_num = request.GET.get('page')
+        page = paginator.get_page(page_num)
         
-        return render(request, 'html/hoadm.html')
+        
+        return render(request, 'html/hoadm.html', {'page':page, 'usuario':usuario})
+    else:
+        return redirect('/logadm/adm')
+    
+def admcad(request):
+    if request.session.get('usuario'):
+        pass
+
+
+
     else:
         return redirect('/logadm/adm')

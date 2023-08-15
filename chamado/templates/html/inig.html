@@ -19,12 +19,12 @@
     <img class="imgchave"  src="{% static 'img/inclesa.gif' %}" alt="https://icons8.com.br/icons/set/chave-inglesa">
     <button class="botach" type="submit"> <a style="text-decoration: none" href="{% url 'cadastro' %}">Solicitar assistencia</a></button>
 
-    <input class="busca" type="text" id="filtro" placeholder="Pesquisar">
+    <!--<input class="busca" type="text" id="filtro" placeholder="Pesquisar">-->
 
     <div class="divname">Lista de Atendimento</div>
     <table id="tabela">
         <tr>
-          <th style="width: 15%;"> <span>Código</span></th>
+          <th style="width: 15%;"> <span>Chamado</span></th>
           <th style="width: 30%;"><span>Assunto</span></th>
           <th style="width: 15%;"><span>Status</span></th>
           <th><span>Realizado</span></th>
@@ -43,8 +43,17 @@
         
 
 
-
     </table>
+    <div class="pagina">
 
+      {% if page.has_previous %}
+        <a href="{% url 'home' %}?page={{ page.previous_page_number }}">&#8810;&#8195; &#8195; </a> 
+      {% endif %}
+    
+      {% if page.has_next %}
+        <a href="{% url 'home' %}?page={{ page.next_page_number }}">&#8811;</a>
+      {% endif %}
+    
+    </div>
 </body>
 </html>

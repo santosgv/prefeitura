@@ -5,10 +5,11 @@ body, html{
     height: 100%;
     overflow: hidden;
 }
+a{text-decoration: none;}
 
-.paginacao{display: flex;
+.pagina{display: flex;
   justify-content: center; 
-  margin-top: 20px;}
+  margin-top: 13vh;}
 
 .name{position: relative; top: -2vh; right: -155vh;}
 

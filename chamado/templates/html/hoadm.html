@@ -15,37 +15,46 @@
         <img class="imguser" src="https://img.icons8.com/?size=512&id=98957&format=png" alt="conta">
         
         </div>
-        <img class="imgpc" src="{% static 'img/pc.gif' %}" alt="https://icons8.com.br/icons/set/pc">
+       <img class="imgpc" src="{% static 'img/pc.gif' %}" alt="https://icons8.com.br/icons/set/pc">
         <img class="imgchave"  src="{% static 'img/inclesa.gif' %}" alt="https://icons8.com.br/icons/set/chave-inglesa">
-        <button class="botach" type="submit"> <a style="text-decoration: none" href="{% url 'cadastro' %}">Solicitar assistencia</a></button>
+        <button class="botach" type="submit"> <a style="text-decoration: none" href="{% url 'cadastro' %}">assistencia</a></button>
     
         <input class="busca" type="text" id="filtro" placeholder="Pesquisar">
     
         <div class="divname">Lista de Atendimento</div>
         <table id="tabela">
             <tr>
-              <th style="width: 15%;"> <span>Código</span></th>
+              <th style="width: 15%;"> <span>Chamado</span></th>
+              <th><span>Unidade</span></th>
               <th style="width: 30%;"><span>Assunto</span></th>
               <th style="width: 15%;"><span>Status</span></th>
-              <th><span>Atendente</span></th>
+              <th><span>Tecnico</span></th>
               <th><span>Realizado</span></th>
               <th><span>Finalizado</span></th>
             </tr>
-            <tr>
-              <td>895</td>
-              <td>Internet</td>
-              <td>Concluido</td>
-              <td>Anderson </td>
-              <td>24/04/2024</td>
-              <td>--</td>
+            {% for chamado in page.object_list %}
+            <tr >
+              <td >{{ chamado.id }}</td>
+              <td>{{}}</td>
+              <td>{{ chamado.tipo }}</td>
+              <td>{{ chamado.status }}</td>
+              <td>{{ chamado.tecnico }}</td>
+              <td>{{chamado.data_cadastro|date:"d/m/Y"}}</td>
+              <td>{{chamado.data_finalizado}}</td>
             </tr>
-            <tr>
-              <td>Lois</td>
-              <td>Griffin</td>
-              <td>e</td>
-              <td>e</td>
-              <td>e</td>
-            </tr>
+            {% endfor %}
+            
         </table>
+        <div class="pagina">
+
+          {% if page.has_previous %}
+            <a href="{% url 'adm' %}?page={{ page.previous_page_number }}">&#8810;&#8195; &#8195; </a> 
+          {% endif %}
+        
+          {% if page.has_next %}
+            <a href="{% url 'adm' %}?page={{ page.next_page_number }}">&#8195; &#8811;</a>
+          {% endif %}
+        
+        </div>
 </body>
 </html>
