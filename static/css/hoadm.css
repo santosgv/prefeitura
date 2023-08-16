@@ -29,7 +29,7 @@ a{text-decoration: none;}
 .botach{background: rgb(0, 255, 64); color: #fff; width: 140px; height: 30px; 
 position: relative; top: 10%; right: 2vh;}
 
-.divname{background-color: #04aa6d91; width: 49.85%; height: 5vh; flex-shrink: 0; position: relative; top: 9.88vh; right: -46vh; 
+.divname{background-color: #04aa6d91; width: 52%; height: 5vh; flex-shrink: 0; position: relative; top: 9.88vh; right: -46vh; 
  font-family: 'Inter' ; font-weight: bold; display: flex; align-items: center; justify-content: center; border: 1px solid black; border-bottom: none; }
 
 span{color: #fff;}
@@ -61,6 +61,6 @@ th{padding-top: 8px;
   
 }
   /* tabela inteira */
-table{width: 50%;
+table{width: 52.18%;
   border: 1px solid; border-collapse: collapse;position: relative; top: 10%; right: -46vh; border-top: none; }
 

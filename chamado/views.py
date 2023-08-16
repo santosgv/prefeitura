@@ -6,6 +6,8 @@ from login.models import Usuario
 from logadm.models import Usuarioa
 from .models import Chamado
 from django.core.paginator import Paginator
+from datetime import date
+
 
 def logge(request):
     if request.session.get('usuario'):
@@ -35,11 +37,13 @@ def cadi(request):
 def valif(request):
     if request.method == 'POST':
         tipo= request.POST.get('TIPO')
-        local= request.POST.get('loca')
+        locall= request.POST.get('loca')
         demanda = request.POST.get('de')
+        
         usuario = Usuario.objects.get(id = request.session['usuario'])
+        unidade = usuario.get_local()
 
-        chamado = Chamado( tipo = tipo, localpro = local, demanda = demanda, usuario = usuario)
+        chamado = Chamado( tipo = tipo, localpro = locall, demanda = demanda, usuario = usuario, unidade = unidade)
         chamado.save()
         return redirect('/chamado/home/')
 
@@ -63,10 +67,31 @@ def adm(request):
     else:
         return redirect('/logadm/adm')
     
-def admcad(request):
+def admcad(request, id_chamado):
     if request.session.get('usuario'):
-        pass
+        chamado = Chamado.objects.get(id=id_chamado)
+        if request.method == 'POST':
+            id_chamado = request.resolver_match.kwargs['id_chamado']
+            solucao = request.POST.get('so')
+            fim = bool(request.POST.get('fi'))
+            
+            if fim:
+                finalizado = date.today().strftime('%Y-%m-%d')
+                chamado.data_finalizado = finalizado
+            else:
+                pass
+            chamado.solucao = solucao
+            
+            chamado.save()
+            return redirect('/chamado/adm')    
 
+
+
+        else:
+            return render(request, 'html/admalt.html', {'chamado':chamado})
+
+    
+        
 
 
     else:

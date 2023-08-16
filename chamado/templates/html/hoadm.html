@@ -24,24 +24,31 @@
         <div class="divname">Lista de Atendimento</div>
         <table id="tabela">
             <tr>
-              <th style="width: 15%;"> <span>Chamado</span></th>
+              <th style="width: 10%;"> <span>Chamado</span></th>
               <th><span>Unidade</span></th>
               <th style="width: 30%;"><span>Assunto</span></th>
               <th style="width: 15%;"><span>Status</span></th>
               <th><span>Tecnico</span></th>
               <th><span>Realizado</span></th>
               <th><span>Finalizado</span></th>
+              <th></th>
             </tr>
             {% for chamado in page.object_list %}
             <tr >
               <td >{{ chamado.id }}</td>
-              <td>{{}}</td>
+              <td>{{chamado.unidade}}</td>
               <td>{{ chamado.tipo }}</td>
               <td>{{ chamado.status }}</td>
               <td>{{ chamado.tecnico }}</td>
               <td>{{chamado.data_cadastro|date:"d/m/Y"}}</td>
-              <td>{{chamado.data_finalizado}}</td>
+              <td>{{chamado.data_finalizado|date:"d/m/Y"}}</td>
+              <td>
+              <a href="{% url 'admcad' id_chamado=chamado.id %}"> 
+                <img src="{% static 'img/lapiz.png' %}" alt="https://icons8.com.br"> 
+              </a> 
+            </td>
             </tr>
+            
             {% endfor %}
             
         </table>

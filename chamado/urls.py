@@ -8,5 +8,6 @@ urlpatterns = [
     path('validafor/',views.valif,name='form'),
     path('adm/', views.adm, name = 'adm'),
     path('adm/<int:page>/', views.adm, name='adm'),
-    path('solucao/', views.admcad, name='admcad')
+    path('solucao/', views.admcad, name='admcad'),
+    path('solucao/<int:id_chamado>/', views.admcad, name='admcad')
 ]

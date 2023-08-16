@@ -7,6 +7,9 @@ class Usuario(models.Model):
     senha = models.CharField(max_length=64)
     local = models.CharField(max_length=65, default='N/A')
     
+    def get_local(self):
+        return self.local
+
     def __str__(self) -> str:
         return self.nome
 # Create your models here.

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'img/ipojuca icone.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/admalt.css' %}">
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="divim">
+        <img class="imglog" src="https://www.ipojuca.pe.gov.br/wp-content/uploads/2021/03/loader-pmi.png" alt="logo ipojuca">
+        <img class="imgale"  src="https://img.icons8.com/?size=512&id=24552&format=png" alt="Duvidas">
+        <img class="imguser" src="https://img.icons8.com/?size=512&id=98957&format=png" alt="conta">
+        </div>
+
+   <div class="espa">
+        <table class="cor">
+
+            <tr>
+                <label style="font-style: oblique; font-weight: bold;" for="ge">Gestor:</label>
+                <th >{{chamado.usuario}}</th>
+            </tr>
+        </table>
+        <table class="uni">  
+            <tr>
+                <label style="font-style: oblique; font-weight: bold; " for="un">Unidade:</label>
+                <th>{{chamado.unidade}}</th>
+            </tr>
+        </table>
+
+        <table class="uni">  
+            <tr>
+                <label style="font-style: oblique; font-weight: bold;" for="jh">Cod_chamado</label>
+                <th>{{chamado.id}}</th>
+                
+            </tr>
+        </table>
+               
+        <table class="uni">  
+            <tr>
+                <label style="font-style: oblique; font-weight: bold; " for="um">Demanda:</label>
+                <th>{{chamado.demanda}}</th>
+            </tr>
+        </table>
+        
+        <form action="{% url 'admcad' id_chamado=chamado.id %}" method="post">{% csrf_token %}
+            <input type="hidden" name="id_chamado" value="{{ chamado.id }}">
+            <label for="so">Solução:</label><br>
+            <textarea name="so" id="sol" cols="30" rows="10" maxlength="399"></textarea><br>
+            <label for="a">Finalizado:</label><br>
+            <input type="checkbox" name="fi" id="fim">
+
+            <input type="submit" value="enviar">
+        </form>
+</body>
+</html>

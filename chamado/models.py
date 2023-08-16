@@ -10,8 +10,10 @@ class Chamado(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.DO_NOTHING)
     tecnico = models.ForeignKey(Usuarioa, on_delete=models.DO_NOTHING, default=1)
     data_cadastro = models.DateTimeField(default= datetime.today)
-    data_finalizado = models.CharField(max_length=12, default='--')
+    data_finalizado = models.DateField(null=True, blank=True)
     status = models.CharField(max_length=40, default='Pendente')
+    unidade = models.CharField(max_length=65, default='N/A')
+    solucao = models.CharField(max_length=399, default='N/A')
     def _str_(self) -> str:
         return self.tipo
 # Create your models here.
