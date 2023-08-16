@@ -20,8 +20,9 @@
         <button class="botach" type="submit"> <a style="text-decoration: none" href="{% url 'cadastro' %}">assistencia</a></button>
     
         <input class="busca" type="text" id="filtro" placeholder="Pesquisar">
-    
+        
         <div class="divname">Lista de Atendimento</div>
+        <div style="overflow-x:auto;"></div>
         <table id="tabela">
             <tr>
               <th style="width: 10%;"> <span>Chamado</span></th>
@@ -31,6 +32,7 @@
               <th><span>Tecnico</span></th>
               <th><span>Realizado</span></th>
               <th><span>Finalizado</span></th>
+              <th></th>
               <th></th>
             </tr>
             {% for chamado in page.object_list %}
@@ -42,16 +44,22 @@
               <td>{{ chamado.tecnico }}</td>
               <td>{{chamado.data_cadastro|date:"d/m/Y"}}</td>
               <td>{{chamado.data_finalizado|date:"d/m/Y"}}</td>
-              <td>
+              <td> 
               <a href="{% url 'admcad' id_chamado=chamado.id %}"> 
                 <img src="{% static 'img/lapiz.png' %}" alt="https://icons8.com.br"> 
               </a> 
+            </td>
+            <td >
+              <a href="{% url 'admcad' id_chamado=chamado.id %}">
+                <img src="{% static 'img/impressora.png' %}" alt="">
+              </a>
             </td>
             </tr>
             
             {% endfor %}
             
         </table>
+      </div>
         <div class="pagina">
 
           {% if page.has_previous %}

@@ -78,10 +78,11 @@ def admcad(request, id_chamado):
             if fim:
                 finalizado = date.today().strftime('%Y-%m-%d')
                 chamado.data_finalizado = finalizado
+                status = 'Finalizado'
             else:
                 pass
             chamado.solucao = solucao
-            
+            chamado.status = status
             chamado.save()
             return redirect('/chamado/adm')    
 
