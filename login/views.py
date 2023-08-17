@@ -4,6 +4,9 @@ from django.shortcuts import redirect
 from django.http import HttpResponse
 
 
+def home(request):
+    status = request.GET.get('status')
+    return render(request, 'html/login.html', {'status': status})
 
 def gestor(request):
     status = request.GET.get('status')

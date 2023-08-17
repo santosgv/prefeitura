@@ -1,38 +1,49 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="{% static 'img/ipojuca icone.ico' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
-    <title>Prefeitura</title>
-</head>
-<body>
-    {% if status == '1' %}
-        
+{% block 'title' %}
+Prefeitura
+{% endblock %}
+
+    {% block 'body' %}
+
+    {% if status == '1' %} 
 
     {% endif %}
-    
-    <div class="divesque"></div>
-    <div class="divdire" ></div>
-    <div class="diva">
-    <img class="imgl" src="https://www.ipojuca.pe.gov.br/wp-content/uploads/2021/03/loader-pmi.png" alt="BRASAO de IPOJUCA" >
-    <h1 style="font-size: 15px; position: relative; top: -100px; left: 46%;">PREFEITURA DO</h1>
-    <H1 style="font-weight: bold; font-size: 50px; position: relative; top: -140px; left: 46%;">IPOJUCA</H1>
-    <H2>SECRETARIA DE SAÚDE</H2>
-    <H3>SUPORTE TÉCNICO</H3>
-    <div class="divi">
+    <div class="content text-center">
+        <div class="card mb-3">
+            <div class="row no-gutters logo">
+              <div class="col-md-4 img-login">
+                <img class="imgl" src="https://www.ipojuca.pe.gov.br/wp-content/uploads/2021/03/loader-pmi.png" alt="BRASAO de IPOJUCA" >
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title titulo">PREFEITURA DO</h5>
+                  <p class="card-text titulo">IPOJUCA</p>
+                  <p class="subtitulo">SECRETARIA DE SAÚDE</p>
+                  <p class="subtitulo">SUPORTE TÉCNICO</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+   
         <form action="{% url 'valida'%}" method="post">{% csrf_token %}
-    <label for="matricuLA">Digite sua Matrícula:</label><br>
-    <input style="width: 22vh;" name="Matricula" type="text" id = 'matricula' placeholder="Matrícula"><br><br><br>
-    <label for="SenhA">Digite sua Senha:</label><br>
-    <input style="width: 22vh;" name="Senha" type="password" id = 'cpf' placeholder="Senha"><br><br><br>
-    <input class="buta" type="submit" value="Entrar">
+
+            <div class="form-group">
+                <label for="matricuLA">Digite sua Matrícula:</label>
+                <input name="Matricula" type="text" class="form-control" id="matricula" placeholder="Matrícula">
+              </div>
+              <div class="form-group">
+                <label for="SenhA">Digite sua Senha:</label>
+                <input name="Senha" type="password" class="form-control" id="cpf"  placeholder="Senha">
+              </div>
+              <div class="text-center">
+              <button type="submit" class="btn btn-primary">Entrar</button>
+          </div>
         </form>
     </div>
-    </div>
 
-</body>
-</html>
+{% endblock %}
+
